@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @city.name %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @city.country_id %>
+</p>
+<p>
+<%= image_tag @city.avatar.url(:medium) %>
+</p>
+
+<% @city.airports.each do |airport| %>
+  <p><%= airport.name %></p>
+  <p><%= image_tag airport.avatar.url(:medium) %></p>
+<% end %>
+<%= link_to 'Edit', edit_city_path(@city) %> |
+<%= link_to 'Back', :back %>
+
+
+
+
+
+

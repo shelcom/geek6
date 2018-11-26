@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @country.name %>
+</p>
+<p>
+<%= image_tag @country.avatar.url(:medium) %>
+</p>
+<% @country.cities.each do |city| %>
+  <p><%= city.name %></p>
+  <p><%= image_tag city.avatar.url(:medium) %></p>
+<% end %>
+
+<%= link_to 'Edit', edit_country_path(@country) %> |
+<%= link_to 'Back', :back %>
+
+

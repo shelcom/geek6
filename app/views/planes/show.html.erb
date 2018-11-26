@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @plane.name %>
+</p>
+
+<p>
+  <strong>Airport:</strong>
+  <%= @plane.airport_id %>
+</p>
+
+<p>
+<%= image_tag @plane.avatar.url(:medium) %>
+</p>
+<% @plane.passengers.each do |passenger| %>
+  <p><%= passenger.name %></p>
+  <p><%= image_tag passenger.avatar.url(:medium) %></p>
+<% end %>
+
+<%= link_to 'Edit', edit_plane_path(@plane) %> |
+<%= link_to 'Back', :back %>

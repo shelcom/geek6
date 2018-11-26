@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @passenger.name %>
+</p>
+
+<p>
+  <strong>Plane:</strong>
+  <%= @passenger.plane_id %>
+</p>
+<p>
+<%= image_tag @passenger.avatar.url(:medium) %>
+</p>
+<% @passenger.tickets.each do |ticket| %>
+  <p><%= ticket.name %></p>
+  <p><%= image_tag ticket.avatar.url(:medium) %></p>
+<% end %>
+<%= link_to 'Edit', edit_passenger_path(@passenger) %> |
+<%= link_to 'Back', :back %>
